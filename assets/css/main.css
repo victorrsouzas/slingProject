@@ -3,6 +3,12 @@ body {
     margin: 0;
 }
 
+header {
+    background: rgb(150, 150, 150);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
 section {
     padding: 5em;
 }
@@ -30,16 +36,105 @@ p {
     animation: bounce-in .8s;
 }
 
-.page-leave-active{
+.page-leave-active {
     animation: bounce-out .5s;
 }
 
-@keyframes bounce-in{
-    0% { transform: scale(.9); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+@keyframes bounce-in {
+    0% {
+        transform: scale(.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes bounce-out {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(0); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.dark-light {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 50px;
+    right: 30px;
+    background-color: #f7f7f7;
+    box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.dark-light svg {
+    width: 24px;
+    flex-shrink: 0;
+    fill: #ffce45;
+    stroke: #ffce45;
+    transition: 0.5s;
+}
+
+.light-mode .dark-light svg {
+    fill: transparent;
+    stroke: #3c3a3a;
+}
+
+.light-mode .profile-img {
+    border: 2px solid rgb(255 255 255 / 31%);
+}
+
+.light-mode .content-section ul {
+    background-color: rgb(255 255 255 / 31%);
+}
+
+.light-mode .pop-up__title {
+    border-color: #3c3a3a;
+}
+
+.light-mode .dropdown.is-active ul {
+    background-color: rgb(255, 255, 255, 0.94);
+}
+
+.overlay-app {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: all;
+    background-color: rgba(36, 39, 59, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.overlay-app.is-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilos para o modo light */
+body:not(.dark-mode) {
+    background-color: #ffffff;
+    color: #000000;
+    /* Defina outras cores de acordo com o modo light */
+}
+
+/* Estilos para o modo dark */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    /* Defina outras cores de acordo com o modo dark */
 }

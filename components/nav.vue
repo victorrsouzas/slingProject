@@ -20,11 +20,6 @@ export default {
 }
 </script>
 <style>
-header {
-  background: rgb(0, 219, 146);
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-}
 
 .logo,
 li a {
@@ -32,7 +27,7 @@ li a {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
-  color: white;
+  color: black;
   font-size: .9em;
 }
 
