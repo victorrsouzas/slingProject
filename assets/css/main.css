@@ -3,14 +3,58 @@ body {
     margin: 0;
 }
 
+/* Estilos para o modo light */
+body:not(.dark-mode) {
+    background-color: #ffffff;
+    color: #000000;
+    /* Defina outras cores de acordo com o modo light */
+}
+
+body:not(.dark-mode):before {
+    content: '';
+    position: fixed;
+    /* Alterado para "fixed" para preencher a tela corretamente */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.72) 0%,
+            rgba(255, 255, 255, 0.45) 100%);
+    /* Corrigido o valor do canal alfa (alpha) na segunda cor */
+    backdrop-filter: saturate(3);
+    z-index: -1;
+}
+
+/* Estilos para o modo dark */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    /* Defina outras cores de acordo com o modo dark */
+}
+
 header {
-    background: rgb(150, 150, 150);
+    background: #00DC82;
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    flex-shrink: 0;
+    height: 58px;
+    width: 100%;
+    border-bottom: 1px solid rgb(255 255 255 / 35%);
+    padding: 0 30px;
+    white-space: nowrap;
 }
 
 section {
     padding: 5em;
+}
+
+.container-Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
 h1 {
@@ -125,16 +169,59 @@ p {
     opacity: 1;
 }
 
-/* Estilos para o modo light */
-body:not(.dark-mode) {
-    background-color: #ffffff;
-    color: #000000;
-    /* Defina outras cores de acordo com o modo light */
+.app-button-primary-color {
+    border-color: transparent;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    flex: none;
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    line-height: 1rem;
+    padding: 0.625rem 1rem;
+    background-color: #00DC82;
+    --tw-text-opacity: 1;
+    color: rgba(0, 0, 0, 1);
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+    transition-duration: .2s;
 }
 
-/* Estilos para o modo dark */
-body.dark-mode {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    /* Defina outras cores de acordo com o modo dark */
+.app-button {
+    border-color: transparent;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    line-height: 1rem;
+    padding: 0.625rem 1rem;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.dashboard-image {
+    width: 100%;
+    height: auto;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
