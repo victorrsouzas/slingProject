@@ -1,6 +1,6 @@
 <!-- Please remove this file from your project -->
 <template>
-  <div>
+  <div :class="{ 'dark-mode': darkMode }">
     <Nav />
     <nuxt />
     <div class="dark-light" @click="toggleDark">

@@ -33,6 +33,11 @@ body.dark-mode {
     /* Defina outras cores de acordo com o modo dark */
 }
 
+/* Adicione aqui os estilos específicos do dark mode */
+body.dark-mode:before {
+    background: none;
+}
+
 header {
     background: #00DC82;
     display: grid;
@@ -204,14 +209,17 @@ p {
     line-height: 1.25rem;
     line-height: 1rem;
     padding: 0.625rem 1rem;
-    transition-property: background-color,border-color,color,fill,stroke;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     transition-duration: .15s;
 }
 
 .image-container {
     width: 100%;
     max-width: 800px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .dashboard-image {
