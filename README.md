@@ -1,5 +1,8 @@
 # slingProject
 
+## Resume
+
+Project in Nuxt 2 to demonstrate the ease of creating pages using the Vue.js framework.
 ## Build Setup
 
 ```bash
@@ -19,6 +22,9 @@ $ yarn generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
+## DEMO
+
+Link: [slingProject](https://slingproject.surge.sh/)
 ## Special Directories
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
